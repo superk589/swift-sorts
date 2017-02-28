@@ -24,7 +24,7 @@ for t in 1...NUM_TRIALS {
     var unsortedArray: [Int] = randomIntegerArray(MAX_COUNT)
     
     for sortBenchmark in benchmarks {
-        sortBenchmark.sortArray(unsortedArray)
+        _ = sortBenchmark.sortArray(unsortedArray)
     }
 }
 

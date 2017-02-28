@@ -10,7 +10,7 @@
 
 import Foundation
 
-func randomIntegerArray(count: Int) -> [Int]
+func randomIntegerArray(_ count: Int) -> [Int]
 {
     print("Generating array of \(count) random integers in range: [0, \(UINT32_MAX))...")
     
@@ -24,7 +24,7 @@ func randomIntegerArray(count: Int) -> [Int]
     return arr
 }
 
-func arrayIsSorted(arr: [Int]) -> Bool
+func arrayIsSorted(_ arr: [Int]) -> Bool
 {
     for i in 0..<arr.count-1 {
         let a = arr[i]

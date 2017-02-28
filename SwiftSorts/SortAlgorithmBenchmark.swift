@@ -10,7 +10,7 @@
 
 import Foundation
 
-typealias SortAlgorithmClosure = (arr: [Int]) -> [Int]
+typealias SortAlgorithmClosure = (_ arr: [Int]) -> [Int]
 
 enum SortAlgorithm : String {
     case Swift = "Swift"
@@ -60,12 +60,12 @@ class SortAlgorithmBenchmark {
         return "\(name): " + avgTime + " s (± " + stdDev + ")"
     }
     
-    func sortArray(anArray: [Int]) -> Double {
+    func sortArray(_ anArray: [Int]) -> Double {
         print("Running \(name)...")
         
-        let startTime = NSDate()
+        let startTime = Date()
         
-        let sortedArray = algorithm.closure(arr: anArray)
+        let sortedArray = algorithm.closure(anArray)
         
         let totalTime = startTime.timeIntervalSinceNow * -1
         
@@ -79,7 +79,7 @@ class SortAlgorithmBenchmark {
     }
     
     func averageSortTime() -> Double {
-        return sortTimes.reduce(0.0, combine: { $0 + $1 }) / Double(sortTimes.count)
+        return sortTimes.reduce(0.0, { $0 + $1 }) / Double(sortTimes.count)
     }
     
     func standardDeviation() -> Double {
@@ -87,7 +87,7 @@ class SortAlgorithmBenchmark {
         
         let variance = sortTimes.map({ pow($0 - avg, 2.0) })
         
-        let sum = variance.reduce(0.0, combine: { $0 + $1 })
+        let sum = variance.reduce(0.0, { $0 + $1 })
         
         let mean = sum / Double(variance.count)
         

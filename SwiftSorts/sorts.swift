@@ -8,12 +8,12 @@
 //  Copyright (c) 2014 Jesse Squires
 //
 
-func swiftSort(arr: [Int]) -> [Int]
+func swiftSort(_ arr: [Int]) -> [Int]
 {
-    return arr.sort();
+    return arr.sorted();
 }
 
-func selectionSort(array: [Int]) -> [Int]
+func selectionSort(_ array: [Int]) -> [Int]
 {
 	var arr = array
     var minIndex = 0
@@ -34,7 +34,7 @@ func selectionSort(array: [Int]) -> [Int]
     return arr;
 }
 
-func insertionSort(array: [Int]) -> [Int]
+func insertionSort(_ array: [Int]) -> [Int]
 {
 	var arr = array
     for i in 1..<arr.count {
@@ -51,14 +51,14 @@ func insertionSort(array: [Int]) -> [Int]
     return arr;
 }
 
-func quickSort(array: [Int]) -> [Int]
+func quickSort(_ array: [Int]) -> [Int]
 {
 	var arr = array
     quickSort(&arr, left: 0, right: arr.count - 1)
     return arr;
 }
 
-func quickSort(inout arr: [Int], left: Int, right: Int)
+func quickSort(_ arr: inout [Int], left: Int, right: Int)
 {
     let index = partition(&arr, left: left, right: right)
     
@@ -71,7 +71,7 @@ func quickSort(inout arr: [Int], left: Int, right: Int)
     }
 }
 
-func partition(inout arr: [Int], left: Int, right: Int) -> Int
+func partition(_ arr: inout [Int], left: Int, right: Int) -> Int
 {
     var i = left
     var j = right
@@ -100,7 +100,7 @@ func partition(inout arr: [Int], left: Int, right: Int) -> Int
     return i
 }
 
-func heapSort(array: [Int]) -> [Int]
+func heapSort(_ array: [Int]) -> [Int]
 {
 	var arr = array
     heapify(&arr, count: arr.count)
@@ -116,7 +116,7 @@ func heapSort(array: [Int]) -> [Int]
     return arr;
 }
 
-func heapify(inout arr: [Int], count: Int)
+func heapify(_ arr: inout [Int], count: Int)
 {
     var start = (count - 2) / 2
     
@@ -126,7 +126,7 @@ func heapify(inout arr: [Int], count: Int)
     }
 }
 
-func siftDown(inout arr: [Int], start: Int, end: Int)
+func siftDown(_ arr: inout [Int], start: Int, end: Int)
 {
     var root = start
     
