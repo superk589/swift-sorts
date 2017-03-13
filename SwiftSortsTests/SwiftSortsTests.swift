@@ -57,10 +57,26 @@ class SwiftSortsTests: XCTestCase {
         XCTAssertEqual(self.sortedArray, newSortedArray, "Arrays should be equal after sorting")
     }
     
+    func testBubbleSort() {
+        XCTAssertNotEqual(self.sortedArray, self.unsortedArray!, "Arrays should not be equal before sorting")
+        
+        let newSortedArray = bubbleSort(self.unsortedArray!)
+        
+        XCTAssertEqual(self.sortedArray, newSortedArray, "Arrays should be equal after sorting")
+    }
+    
     func testSelectionSort() {
         XCTAssertNotEqual(self.sortedArray, self.unsortedArray!, "Arrays should not be equal before sorting")
         
         let newSortedArray = selectionSort(self.unsortedArray!)
+        
+        XCTAssertEqual(self.sortedArray, newSortedArray, "Arrays should be equal after sorting")
+    }
+    
+    func testMergeSort() {
+        XCTAssertNotEqual(self.sortedArray, self.unsortedArray!, "Arrays should not be equal before sorting")
+        
+        let newSortedArray = mergeSort(array: self.unsortedArray!)
         
         XCTAssertEqual(self.sortedArray, newSortedArray, "Arrays should be equal after sorting")
     }

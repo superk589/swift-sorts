@@ -12,11 +12,12 @@ let MAX_COUNT = 100_000
 
 let NUM_TRIALS = 20
 
-let benchmarks: [SortAlgorithmBenchmark] = [SortAlgorithmBenchmark(.Swift),
-                                            SortAlgorithmBenchmark(.Quick),
-                                            SortAlgorithmBenchmark(.Heap),
-                                            SortAlgorithmBenchmark(.Insertion),
-                                            SortAlgorithmBenchmark(.Selection)]
+let benchmarks: [SortAlgorithmBenchmark] = [SortAlgorithmBenchmark(.swift),
+                                            SortAlgorithmBenchmark(.quick),
+                                            SortAlgorithmBenchmark(.heap),
+                                            SortAlgorithmBenchmark(.merge),
+                                            SortAlgorithmBenchmark(.insertion),
+                                            SortAlgorithmBenchmark(.selection)]
 
 for t in 1...NUM_TRIALS {
     print("::: TRIAL \(t) :::")

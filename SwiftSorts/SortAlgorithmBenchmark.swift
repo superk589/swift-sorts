@@ -13,29 +13,37 @@ import Foundation
 typealias SortAlgorithmClosure = (_ arr: [Int]) -> [Int]
 
 enum SortAlgorithm : String {
-    case Swift = "Swift"
-    case Quick = "Quick"
-    case Heap = "Heap"
-    case Insertion = "Insertion"
-    case Selection = "Selection"
+    case swift = "Swift"
+    case quick = "Quick"
+    case heap = "Heap"
+    case insertion = "Insertion"
+    case selection = "Selection"
+    case bubble = "Bubble"
+    case merge = "Merge"
     
     var closure: SortAlgorithmClosure {
         switch self {
-        case .Swift:
+        case .swift:
             return swiftSort
             
-        case .Quick:
+        case .quick:
             return quickSort
             
-        case .Heap:
+        case .heap:
             return heapSort
             
-        case .Insertion:
+        case .insertion:
             return insertionSort
             
-        case .Selection:
+        case .selection:
             return selectionSort
-            }
+            
+        case .bubble:
+            return bubbleSort
+            
+        case .merge:
+            return mergeSort
+        }
     }
 }
 
